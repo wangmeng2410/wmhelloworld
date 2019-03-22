@@ -6,3 +6,7 @@ linter-css
 linter-html
 linter-js
 linter-eslint
+
+
+http://web.jobbole.com/95057/
+http://www.cnblogs.com/liucldq/p/9675307.html
