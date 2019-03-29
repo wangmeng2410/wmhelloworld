@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="firstVue" v-bind:hidden="my_hidden">
+    <p><input type="text" v-model="my_data"></p>
+    <p>{{my_data}}</p>
+    <button v-on:click="clickButton">Click Me</button>
+</div>
+
+<br>
+<div id="contents">
+    <p><a href="https://www.jianshu.com/p/5d0d913d2453">VueJS简明教程(一)之基本使用方法</a></p>
+    <p><a href="https://www.jianshu.com/p/b544091c3d67">MVVM</a></p>
+    <ul style="margin-left:-20px">
+        <li>用 new Vue({})新建vue实例</li>
+        <li>使用 v-bind:和{{}}双大括号语法在html中绑定变量</li>
+        <li>使用 v-on: 和 @ 语法绑定函数到标签的事件</li>
+        <li>使用 v-model: 语法使用户的页面输入反向传递回vue实例变量</li>
+    </ul>
+</div>
+<br>
+
+
+<div id="secondVue" border="1px">
+    <p><input type="text" v-model.number="my_number"></p>
+    <p><st>{{my_total}}</st></p>
+    <button @click="cal_f">calculate</button>
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+    var myVue1 = new Vue({
+        el:'#firstVue',
+        data:{
+            my_data: "test",
+            <!-- my_hidden: "hidden" -->
+        },
+        methods:{
+            clickButton:function(){
+                this.my_data = "Wow! I'm changed!"
+            }
+        }
+    })
+
+
+
+
+    var myVue2 = new Vue({
+        el:"#secondVue",
+        data:{
+            my_number:1,
+            my_total:0
+        },
+        methods:{
+            cal_f:function(){
+                this.my_total = this.my_total + this.my_number
+            }
+        }
+
+
+    })
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
